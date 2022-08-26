@@ -3,19 +3,23 @@
 using namespace std;
 // 2010990388 Kirti Dhawan
 void printfirstrepeating(int arr[],int n){
-    int min=-1;
-    set<int> myset;
+    // first we have to initialize the first repeating element
+    int minimum=-1;
+    set<int> set1;
     for(int i=n-1;i>=0;i--){
-        if(myset.find((arr[i]))!=myset.end()){
-            min=i;
+        if(set1.find((arr[i]))!=set1.end()){ 
+            // if the element is already present in the set then we have to update the min value;
+            // if not present add it to the set;
+            minimum=i;
         }
         else{
-            myset.insert((arr[i]));
+            set1.insert((arr[i]));
 
         }
     }
-    if(min!=-1){
-        cout<<arr[min]<<"minimum element";
+    //Now print the min value;
+    if(minimum!=-1){
+        cout<<"The minimum index of repeating element is"<<" "<<minimum;
     }
     else{
         cout<<"Invalid input";
@@ -24,6 +28,7 @@ void printfirstrepeating(int arr[],int n){
 }
 int main(){
     cout<<"enter the no of elements";
+    cout<<endl;
     int n;
     cin>>n;
     int arr[n];
