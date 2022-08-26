@@ -29,6 +29,7 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>arr[i];
     }
+    // first we have to sort the whole array and check the difference between the adjacent elements
   sort(arr,arr+n);
   printconsecutiveintegers(arr,n);
     
